@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CurrencyAPP</string>\
+  <string name="title_activity_currency_overview">Currency Overview</string>
+  <string name="action_settings">Settings</string>
+  <string name="section_format">Hello World from section: %1$d</string>
+
+  <string name="drawer_open">Open</string>
+  <string name="drawer_close">Close</string>
+  <string name="set">Set</string>
+  <string name="cancel">Cancel</string>
+  <string name="action_search">Search</string>
+  <string name="search_hint" />
+</resources>
