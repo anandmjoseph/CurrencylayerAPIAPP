@@ -15,7 +15,7 @@ public class ServiceGenerator {
     private static final String TAG = ServiceGenerator.class.getName();
     private static final String API_BASE_URL = "http://apilayer.net/";
     private static final String API_PARAM_NAME = "access_key";
-    private static final String API_ACCESS_KEY = "5e0517f41c7ec0dbd09d425029d4d5b1";
+    private static final String API_ACCESS_KEY = "a776aa6599c0f66125ba0e2571f08a39";
     
     private static final Retrofit.Builder builder =
             new Retrofit.Builder()
