@@ -91,7 +91,8 @@ public class Repository {
         ArrayList<Entry> data = new ArrayList<>();
 
         for (int i = 0; i < this.data.size(); i++) {
-            data.add(new Entry((float) this.data.get(i).get(id).quote,i));
+
+            data.add(new Entry(i, (float) this.data.get(i).get(id).quote,i));
         }
 
         return data;

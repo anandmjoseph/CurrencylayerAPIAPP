@@ -4,6 +4,7 @@ import anand.com.currencyapp.R;
 import anand.com.currencyapp.managers.Repository;
 import anand.com.currencyapp.utils.DateHelper;
 import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -60,7 +62,6 @@ public class CurrencyWeekOverviewFragment extends Fragment {
         return rootView;
     }
 
-
     /**
      * Prepare data for {@link LineChart}
      * @param id Currency id to get data for
@@ -69,8 +70,6 @@ public class CurrencyWeekOverviewFragment extends Fragment {
     private LineData prepareChartData(int id){
         // creating list of entry
         ArrayList<Entry> entries = Repository.getInstance().getCurrencyForWeek(id);
-
-
         LineDataSet lineDataSet = new LineDataSet(entries, "Quote based on USD");
         lineDataSet.setColor(Color.parseColor("#3F51B5"));
         lineDataSet.setFillColor(Color.parseColor("#C6CCEB"));
@@ -79,7 +78,6 @@ public class CurrencyWeekOverviewFragment extends Fragment {
         lineDataSet.setDrawCircles(true);
         lineDataSet.setDrawFilled(true);
         lineDataSet.setValueTextSize(15);
-        List<String> labels = DateHelper.getStringForLastWeek();
 
         ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
         dataSets.add(lineDataSet);
