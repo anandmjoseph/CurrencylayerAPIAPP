@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="#03A9F4">
 
     <TextView
         android:layout_width="wrap_content"
@@ -10,7 +12,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:gravity="center"
-        android:textColor="@color/textColorPrimary"
+        android:layout_marginLeft="6dp"
+        android:textColor="#F11717"
         android:id="@+id/code" />
 
     <TextView
@@ -19,9 +22,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:gravity="center"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/textColorSecondary"
+        android:textColor="#0C0B0B"
         android:ellipsize="end"
         android:maxLines="1"
         android:id="@+id/name" />
-</LinearLayout>
+</RelativeLayout>
