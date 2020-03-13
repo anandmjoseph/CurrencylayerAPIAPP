@@ -36,7 +36,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements PrepareDataTaskInterface {
 
     private static final String TAG = MainActivity.class.getName();
-    private static final String ARG_CURRENCY_ID = "currencyID";
     private ProgressDialog mDialog;
     private ActionBarDrawerToggle mDrawerToggle;
     private CurrencyTypeListAdapter adapter;
@@ -60,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
     }
 
     private void  setupToolbar() {
-
-        toolbar.setTitle("Currency list");
+        toolbar.setTitle("Currency list from ApiLayer");
         toolbar.setNavigationIcon(R.drawable.ic_menu_white_36dp);
         setSupportActionBar(toolbar);
 
@@ -81,11 +79,10 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
             }
         };
 
-
         leftDrawer.setAdapter(new LeftDrawerAdapter(this, menuItems));
 
         // Set the drawer toggle as the DrawerListener
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
@@ -111,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
             return true;
         }
         // Handle your other action bar items...
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -137,17 +133,12 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
         return true;
     }
 
-
-
-
     private Activity getActivityContext() {
         return this;
     }
 
-
     //region Data preparation
     private void prepareData() {
-
         mDialog = new ProgressDialog(this);
         mDialog.setMessage("Please wait...");
         mDialog.setCancelable(false);
@@ -156,24 +147,19 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
         PrepareDataTask t = new PrepareDataTask();
         t.delegate = this;
         t.execute();
-
-
     }
+
     @Override
     public void prepareDataFinished(Boolean finished) {
         Log.d(TAG, finished ? "FINISHED" : "NOT FINISHED");
         if (finished) {
-
             adapter = new CurrencyTypeListAdapter(MainActivity.this.getActivityContext());
             currencyListView.setAdapter(adapter);
-
             if (mDialog != null)
                 mDialog.cancel();
-
             CacheDataTask  task = new CacheDataTask();
             task.execute();
         }
-
     }
     //endregion
 
@@ -206,13 +192,11 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
         Intent intent = new Intent(this, CurrencyOverviewActivity.class);
         startActivity(intent);
     }
+
     //endregion
 
     void showChangeAmountDialog(){
-
         ChangeAmountFragment dialog = new ChangeAmountFragment();
-
         dialog.show(getFragmentManager(),"Change base amount");
-
     }
 }
