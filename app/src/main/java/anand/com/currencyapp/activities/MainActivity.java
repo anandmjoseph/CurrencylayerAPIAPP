@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
     private ActionBarDrawerToggle mDrawerToggle;
     private CurrencyTypeListAdapter adapter;
 
-    List<String> menuItems = Arrays.asList("Change amount", "Clear cache", "Exit");
+    List<String> menuItems = Arrays.asList("Add Expense","Change amount", "Clear cache", "Exit");
 
     @BindView(R.id.currencyList) ListView currencyListView;
     @BindView(R.id.toolbar) Toolbar toolbar;
@@ -172,15 +172,18 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
 
         switch (position){
             case 0:
-                this.showChangeAmountDialog();
+                callExpense();
                 break;
             case 1:
+                this.showChangeAmountDialog();
+                break;
+            case 2:
                 // Clear data from DB
                 StorageManager s = new StorageManager();
                 s.clearDB();
                 prepareData();
                 break;
-            case 2:
+            case 3:
                 finish();
                 break;
         }
@@ -190,6 +193,11 @@ public class MainActivity extends AppCompatActivity implements PrepareDataTaskIn
     void onCurrencyItemSelected(int position) {
         Repository.getInstance().selectedID = adapter.mData.get(position).ID;
         Intent intent = new Intent(this, CurrencyOverviewActivity.class);
+        startActivity(intent);
+    }
+
+    void callExpense(){
+        Intent intent = new Intent(this, ExpenseActivity.class);
         startActivity(intent);
     }
 

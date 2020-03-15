@@ -20,8 +20,11 @@
             android:resource="@xml/searchable" />
       </activity>
       <activity
+          android:name=".activities.ExpenseActivity"/>
+      <activity android:name=".activities.AddExpenseActivity" />
+      <activity
           android:name=".ui.CurrencyOverviewActivity"
-          android:label="@string/title_activity_currency_overview"></activity>
+         ></activity>
     </application>
   <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

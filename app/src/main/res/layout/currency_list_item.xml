@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="20dp"
+    android:layout_marginEnd="20dp"
     android:layout_marginBottom="20dp"
     android:background="#03A9F4">
 
@@ -11,8 +11,10 @@
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginLeft="6dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
         android:textColor="#F11717"
         android:id="@+id/code" />
 
@@ -22,6 +24,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:textColor="#0C0B0B"
         android:ellipsize="end"
         android:maxLines="1"

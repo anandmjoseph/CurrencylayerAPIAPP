@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.BalanceFragment">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_content"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/balancePieChart"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+        </com.github.mikephil.charting.charts.PieChart>
+    </FrameLayout>
+
+
+
+<RelativeLayout
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="368dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:text="01/10/2018 - 30/1/2018"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+         />
+
+    <TextView
+        android:id="@+id/totalAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateTextView"
+        android:text="400"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        />
+
+  <RelativeLayout
+      android:id="@+id/info_lay"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@+id/totalAmountTextView">
+    <TextView
+        android:id="@+id/incomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:text="Income"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/amountForIncomeTextView"
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/incomeTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:text="600"
+        android:textAlignment="center"
+        android:textColor="#aeea00"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/expenseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:text="Expense"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:id="@+id/amountForExpenseTextView"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="200"
+        android:layout_below="@+id/expenseTextView"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="#ff5722"
+        android:textSize="18sp"/>
+  </RelativeLayout>
+
+</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
